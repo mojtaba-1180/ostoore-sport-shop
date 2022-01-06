@@ -1,0 +1,46 @@
+.section {
+    margin-bottom: 80px;
+    & > * ~ * {
+        background: $low-color;
+        border-radius: 11px;
+        padding: 30px 10px 0px 10px;
+    }
+
+    &__title {
+        font-size: 2rem;
+        text-transform: capitalize;
+        text-align: center;
+    }
+}
+.section__title{
+    display: flex;
+    justify-content: start;
+    align-items: flex-end;
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 2rem;
+    position: relative;
+    margin-bottom: 1rem;
+    &_hr{
+        width: 20rem;
+        position: absolute;
+        border-bottom: 3px solid $main-color;
+
+        bottom: -2px;
+        &.green{
+            border-bottom: 3px solid #0a6;
+
+        }
+        &.red{
+            border-bottom: 3px solid #dd3434;
+
+        }
+        &.aqua{
+            border-bottom: 3px solid #1ec0d3;
+
+        }
+        &.purple{
+            border-bottom: 3px solid #964ae1;
+
+        }
+    }
+}

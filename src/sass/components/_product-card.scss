@@ -1,0 +1,101 @@
+.product-card {
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    padding: 1.2rem;
+    box-shadow: $box-shadow;
+    background-color: $main-bg;
+    position: relative;
+    transition: all .3s;
+    width: 100%;
+        &:hover &__btn{
+            transition: all .3s;
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+
+        }
+    &__image {
+        padding-top: 100%;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 30px;
+        border-radius: 10px;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            // height: 100%;
+            width: 100%;
+            &:nth-child(1) {
+                // transform: translateX(-50%) scale(1);
+                opacity: 1;
+                transition:  0.5s ease;
+            }
+
+            &:nth-child(2) {
+                // transform: translateX(-50%) scale(0);
+                opacity: 0;
+            }
+        }
+
+        &:hover img {
+            &:nth-child(1) {
+                // transform: translateX(-50%) scale(0);
+                opacity: 0;
+            }
+
+            &:nth-child(2) {
+                // transform: translateX(-50%) scale(1);
+                opacity: 1;
+                transition:  0.5s ease;
+            }
+        }
+    }
+
+    &__name {
+        margin-bottom: 10px;
+        color: $txt-second-color;
+        font-size: 1.7rem;
+        font-weight: normal;
+    }
+
+    &__price {
+        color: $txt-main-color;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+        @include tablet {
+                display: flex;
+                flex-direction: column;
+        }
+
+        &__old {
+            color: $txt-second-color;
+            margin:auto 20px;
+            font-weight: 300;
+        }
+    }
+
+    &__btn {
+        display: inline-block;
+        justify-content: flex-start;
+        width: 100%;
+        .btn{
+            width: 95%;
+            margin-bottom: 3%;
+        }
+        visibility: hidden;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: .2s;
+        @include tablet {
+            .btn{
+                font-size: 1.2rem ;
+            }
+        }
+    }
+}
